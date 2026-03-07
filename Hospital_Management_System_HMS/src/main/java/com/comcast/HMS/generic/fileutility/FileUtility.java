@@ -47,4 +47,24 @@ public class FileUtility {
 		return value;
 	}
 
+	public String setDataIntoPrpertiesFile(String key, String value) throws Exception {
+
+		// Specify properties file path
+		String path = "./HMS_DATA/CommonData.properties";
+
+		// Open properties file
+		FileInputStream fis = new FileInputStream(path);
+
+		// Create Properties class object
+		Properties properties = new Properties();
+
+		// Load properties file into Properties object
+		properties.load(fis);
+		// Set value based on key
+		properties.setProperty(key, value);
+
+		// Return value
+		return value;
+	}
+
 }

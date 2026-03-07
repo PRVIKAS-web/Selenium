@@ -134,7 +134,7 @@ public class HMSBaseTest {
 		String url = file.getDataFromPrpertiesFile("Url");
 		String username = file.getDataFromPrpertiesFile("Patient");
 		String password = file.getDataFromPrpertiesFile("Password2");
-
+		file.setDataIntoPrpertiesFile("Patient2", "Amit Kumar");
 		// Create LoginPage object
 		LoginPage login = new LoginPage(driver);
 

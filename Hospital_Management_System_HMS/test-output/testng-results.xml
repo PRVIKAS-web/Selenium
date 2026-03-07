@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-04T08:39:20 IST" name="Suite" finished-at="2026-03-04T08:39:30 IST" duration-ms="10846">
+  <suite started-at="2026-03-07T15:27:23 IST" name="Default suite" finished-at="2026-03-07T15:27:31 IST" duration-ms="7795">
     <groups>
     </groups>
-    <test started-at="2026-03-04T08:39:20 IST" name="Test" finished-at="2026-03-04T08:39:30 IST" duration-ms="10846">
-      <class name="com.comcast.HMS.PatientTest.Book_AppointmentTest">
-        <test-method is-config="true" signature="conficBS()[pri:0, instance:com.comcast.HMS.PatientTest.Book_AppointmentTest@4b2bac3f]" started-at="2026-03-04T08:39:19 IST" name="conficBS" finished-at="2026-03-04T08:39:20 IST" duration-ms="246" status="PASS">
+    <test started-at="2026-03-07T15:27:23 IST" name="Default test" finished-at="2026-03-07T15:27:31 IST" duration-ms="7795">
+      <class name="com.comcast.HMS.DoctorTest.Add_PatientTest">
+        <test-method is-config="true" signature="conficBS()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@70325e14]" started-at="2026-03-07T15:27:23 IST" name="conficBS" finished-at="2026-03-07T15:27:23 IST" duration-ms="460" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- conficBS -->
-        <test-method is-config="true" signature="configBC()[pri:0, instance:com.comcast.HMS.PatientTest.Book_AppointmentTest@4b2bac3f]" started-at="2026-03-04T08:39:26 IST" name="configBC" finished-at="2026-03-04T08:39:27 IST" duration-ms="857" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@70325e14]" started-at="2026-03-07T15:27:24 IST" name="openBrowser" finished-at="2026-03-07T15:27:26 IST" duration-ms="2121" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- configBC -->
-        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.HMS.PatientTest.Book_AppointmentTest@4b2bac3f]" started-at="2026-03-04T08:39:27 IST" name="configBM" finished-at="2026-03-04T08:39:28 IST" duration-ms="1330" status="PASS">
+        </test-method> <!-- openBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@70325e14]" started-at="2026-03-07T15:27:26 IST" name="login" finished-at="2026-03-07T15:27:28 IST" duration-ms="2256" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- configBM -->
-        <test-method signature="BookAppointment()[pri:1, instance:com.comcast.HMS.PatientTest.Book_AppointmentTest@4b2bac3f]" started-at="2026-03-04T08:39:28 IST" name="BookAppointment" finished-at="2026-03-04T08:39:29 IST" duration-ms="1390" status="PASS">
+        </test-method> <!-- login -->
+        <test-method signature="addPatient1()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@70325e14]" started-at="2026-03-07T15:27:28 IST" name="addPatient1" finished-at="2026-03-07T15:27:30 IST" duration-ms="2348" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BookAppointment -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com.comcast.HMS.PatientTest.Book_AppointmentTest@4b2bac3f]" started-at="2026-03-04T08:39:30 IST" name="closeApp" finished-at="2026-03-04T08:39:30 IST" duration-ms="453" status="PASS">
+        </test-method> <!-- addPatient1 -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@70325e14]" started-at="2026-03-07T15:27:30 IST" name="logout" finished-at="2026-03-07T15:27:31 IST" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="ConfigAC()[pri:0, instance:com.comcast.HMS.PatientTest.Book_AppointmentTest@4b2bac3f]" started-at="2026-03-04T08:39:30 IST" name="ConfigAC" finished-at="2026-03-04T08:39:30 IST" duration-ms="282" status="PASS">
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="ConfigAC()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@70325e14]" started-at="2026-03-07T15:27:31 IST" name="ConfigAC" finished-at="2026-03-07T15:27:31 IST" duration-ms="502" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigAC -->
-        <test-method is-config="true" signature="configAS()[pri:0, instance:com.comcast.HMS.PatientTest.Book_AppointmentTest@4b2bac3f]" started-at="2026-03-04T08:39:31 IST" name="configAS" finished-at="2026-03-04T08:39:31 IST" duration-ms="1" status="FAIL">
+        <test-method is-config="true" signature="configAS()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@70325e14]" started-at="2026-03-07T15:27:31 IST" name="configAS" finished-at="2026-03-07T15:27:31 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "java.sql.Connection.close()" because "this.con" is null]]>
@@ -39,7 +39,7 @@
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "java.sql.Connection.close()" because "this.con" is null
 at com.comcarst.HMS.generic.databaseutility.DatabaseUtility.closeDbconnection(DatabaseUtility.java:63)
-at com.comcast.HMS.BaseTest.HMSBaseTest.configAS(HMSBaseTest.java:185)
+at com.comcast.HMS.BaseTest.HMSBaseTest2.configAS(HMSBaseTest2.java:178)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -63,37 +63,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAS -->
-      </class> <!-- com.comcast.HMS.PatientTest.Book_AppointmentTest -->
-      <class name="com.comcast.HMS.DoctorTest.Add_PatientTest">
-        <test-method is-config="true" signature="conficBS()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@3857f613]" started-at="2026-03-04T08:39:20 IST" name="conficBS" finished-at="2026-03-04T08:39:20 IST" duration-ms="5" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- conficBS -->
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@3857f613]" started-at="2026-03-04T08:39:20 IST" name="openBrowser" finished-at="2026-03-04T08:39:21 IST" duration-ms="1395" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@3857f613]" started-at="2026-03-04T08:39:21 IST" name="login" finished-at="2026-03-04T08:39:23 IST" duration-ms="1651" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="addPatient1()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@3857f613]" started-at="2026-03-04T08:39:23 IST" name="addPatient1" finished-at="2026-03-04T08:39:25 IST" duration-ms="2023" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addPatient1 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@3857f613]" started-at="2026-03-04T08:39:25 IST" name="logout" finished-at="2026-03-04T08:39:25 IST" duration-ms="427" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="ConfigAC()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@3857f613]" started-at="2026-03-04T08:39:25 IST" name="ConfigAC" finished-at="2026-03-04T08:39:26 IST" duration-ms="264" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ConfigAC -->
-        <test-method is-config="true" signature="configAS()[pri:0, instance:com.comcast.HMS.DoctorTest.Add_PatientTest@3857f613]" started-at="2026-03-04T08:39:31 IST" name="configAS" finished-at="2026-03-04T08:39:31 IST" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- configAS -->
       </class> <!-- com.comcast.HMS.DoctorTest.Add_PatientTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
