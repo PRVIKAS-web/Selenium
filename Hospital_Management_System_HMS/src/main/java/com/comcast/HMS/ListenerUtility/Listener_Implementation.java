@@ -55,7 +55,6 @@ public class Listener_Implementation implements ITestListener, ISuiteListener {
 	public void onStart(ISuite suite) {
 
 		System.out.println("=== ===> Report Configuration <=== ===");
-
 		// Generate unique report name using date and time
 		String time = new Date().toString().replace(" ", "_").replace(":", "_");
 
