@@ -1,5 +1,6 @@
 package com.comcast.HMS.DoctorTest;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.comcast.HMS.BaseTest.HMSBaseTest2;
@@ -35,16 +36,22 @@ public class Add_PatientTest extends HMSBaseTest2 {
 		// Initialize Page Object classes
 		Doctor_DashboardPage dash = new Doctor_DashboardPage(driver);
 		Add_PatientPage addPatientPage = new Add_PatientPage(driver);
+		
 
 		// Apply implicit wait
 		web.implicitWait(driver, 10);
-
+		
+        // Verify Doctor Dashboard page is displayed
+		web.assertion(driver, "Doctor | Dashboard");
+		
 		// Navigate to Patients menu
 		web.explicitWait(driver, dash.getPatients(), 10);
+		Assert.assertTrue(dash.getPatients().isDisplayed(), "Patients menu is not displayed");
 		dash.getPatients().click();
 
 		// Click Add Patient option
 		web.explicitWait(driver, dash.getAddPatients(), 10);
+		Assert.assertTrue(dash.getAddPatients().isDisplayed(), "Add Patients option is not displayed");
 		dash.getAddPatients().click();
 
 		// Enter patient details
@@ -55,6 +62,7 @@ public class Add_PatientTest extends HMSBaseTest2 {
 		addPatientPage.getPatientEmail().sendKeys("Rohit@test.com");
 
 		// Select gender using JavaScript click
+		Assert.assertTrue(addPatientPage.getGenderMale().isEnabled(), "Gender Male option is not enabled");
 		web.argument(driver, addPatientPage.getGenderMale());
 
 		// Enter remaining details
@@ -65,6 +73,7 @@ public class Add_PatientTest extends HMSBaseTest2 {
 		addPatientPage.getMedicalHistory().sendKeys("Mild Fever");
 
 		// Click Add button
+		Assert.assertTrue(addPatientPage.getAdd().isDisplayed(), "Add button is not Displayed");
 		web.argument(driver, addPatientPage.getAdd());
 
 	}

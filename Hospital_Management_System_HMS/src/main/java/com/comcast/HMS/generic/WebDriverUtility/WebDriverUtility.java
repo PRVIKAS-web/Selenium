@@ -15,6 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 /**
  * WebDriverUtility class contains reusable methods to perform common WebDriver
@@ -219,16 +220,39 @@ public class WebDriverUtility {
 	}
 
 	/**
-	 * This method returns page title.
+	 * This method validates page title against expected value.
 	 * 
 	 * @param driver
-	 * @return String
+	 * @param expectedTitle
 	 */
-	public String getTitle(WebDriver driver) {
+	public void validation(WebDriver driver, String expectedTitle) {
 
-		String Title = driver.getTitle();
+		String actualTitle = driver.getTitle();
 
-		return Title;
+		if (actualTitle.equalsIgnoreCase(expectedTitle)) {
+
+			System.out.println("Validation successful: Title matches expected value.");
+
+		} else {
+
+			System.out.println("Validation failed: Title does not match expected value.");
+			System.out.println("Expected Title: " + expectedTitle);
+			System.out.println("Actual Title: " + actualTitle);
+		}
+	}
+
+	/**
+	 * This method asserts page title against expected value.
+	 * 
+	 * @param driver
+	 * @param expectedTitle
+	 */
+
+	public void assertion(WebDriver driver, String expectedTitle) {
+
+		String actualTitle = driver.getTitle();
+		Assert.assertEquals(actualTitle, expectedTitle);
+		System.out.println("Assertion successful: Title matches expected value.");
 	}
 
 	/**
@@ -239,6 +263,12 @@ public class WebDriverUtility {
 	public void closeBrowser(WebDriver driver) {
 
 		driver.quit();
+	}
+
+	public String getTitle(WebDriver driver) {
+		String title = driver.getTitle();
+		return title;
+
 	}
 
 }

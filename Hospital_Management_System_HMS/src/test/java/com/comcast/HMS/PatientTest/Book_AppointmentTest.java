@@ -1,5 +1,7 @@
 package com.comcast.HMS.PatientTest;
 
+import org.testng.Assert;
+
 /**
  * Book_AppointmentTest class is used to automate Patient Appointment functionality.
  *
@@ -33,6 +35,7 @@ import com.aventstack.extentreports.Status;
 import com.comcast.HMS.BaseTest.HMSBaseTest;
 import com.comcast.HMS.ObjectRepositoryUtility.BookAppointmentPage;
 import com.comcast.HMS.ObjectRepositoryUtility.DashBoardPage;
+import com.comcast.HMS.ObjectRepositoryUtility.User_Appointment_History;
 import com.comcast.HMS.generic.WebDriverUtility.UtilityClassObject;
 
 @Listeners(com.comcast.HMS.ListenerUtility.Listener_Implementation.class)
@@ -43,7 +46,7 @@ public class Book_AppointmentTest extends HMSBaseTest {
 	 *
 	 * @throws Exception
 	 */
-	@Test(priority = 1)
+	@Test(groups = "Smoke")
 	public void BookAppointment() throws Exception {
 
 		// Initialize Page Objects
@@ -93,30 +96,28 @@ public class Book_AppointmentTest extends HMSBaseTest {
 	 *
 	 * Can be enabled when needed
 	 */
-	/*
-	 * @Test(priority = 2) public void AppointmentHistory() {
-	 * 
-	 * User_Appointment_History appointmentHistory = new
-	 * User_Appointment_History(driver); DashBoardPage dashBoardPage = new
-	 * DashBoardPage(driver);
-	 * 
-	 * dashBoardPage.getAppointmentHistory().click();
-	 * 
-	 * String title = web.getTitle(driver);
-	 * 
-	 * Assert.assertEquals(title, "User | Appointment History");
-	 * 
-	 * UtilityClassObject.getTest().log(Status.INFO,
-	 * "Appointment History page verified");
-	 * 
-	 * web.explicitWait(driver, appointmentHistory.getCancel(), 10);
-	 * 
-	 * web.argument(driver, appointmentHistory.getCancel());
-	 * 
-	 * web.alert(driver);
-	 * 
-	 * UtilityClassObject.getTest().log(Status.INFO,
-	 * "Appointment canceled successfully"); }
-	 */
+
+	@Test(groups = "regression")
+	public void AppointmentHistory() {
+
+		User_Appointment_History appointmentHistory = new User_Appointment_History(driver);
+		DashBoardPage dashBoardPage = new DashBoardPage(driver);
+
+		dashBoardPage.getAppointmentHistory().click();
+
+		String title = web.getTitle(driver);
+
+		Assert.assertEquals(title, "User | Appointment History");
+
+		UtilityClassObject.getTest().log(Status.INFO, "Appointment History page verified");
+
+		web.explicitWait(driver, appointmentHistory.getCancel(), 10);
+
+		web.argument(driver, appointmentHistory.getCancel());
+
+		web.alert(driver);
+
+		UtilityClassObject.getTest().log(Status.INFO, "Appointment canceled successfully");
+	}
 
 }
