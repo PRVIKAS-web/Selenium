@@ -59,7 +59,7 @@ public class Listener_Implementation implements ITestListener, ISuiteListener {
 		String time = new Date().toString().replace(" ", "_").replace(":", "_");
 
 		// Specify report path
-		spark = new ExtentSparkReporter("./AdvancedReport/PatientModule/report" + time + ".html");
+		spark = new ExtentSparkReporter("./AdvancedReport/PatientModule/report" + time + ".xml");
 
 		// Configure report details
 		spark.config().setReportName("Appointment Module");
