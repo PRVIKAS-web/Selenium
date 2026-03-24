@@ -1,0 +1,294 @@
+{
+  "info": {
+    "_postman_id": "225bf869-eeda-4538-87ab-e3a63565716c",
+    "name": "Repo_Using_Variables",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53141287",
+    "_collection_link": "https://go.postman.co/collection/53141287-225bf869-eeda-4538-87ab-e3a63565716c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create _A_Repo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Status code name has string\", function () {\r",
+              "    pm.response.to.have.status(\"Created\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response time is less than or equals to 1500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response body contains the correct repository name\", function () {\r",
+              "    pm.expect(pm.response.json().name).to.eql(\"{{RandomName}}\");\r",
+              "    });\r",
+              "\r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    \r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.environment.set(\"reponame\", jsonData.name);\r",
+              "\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "let x = Math.floor((Math.random() * 100) + 1);\r",
+              "pm.environment.set(\"RandomName\", \"-Api-Testing-\"+x);\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"{{RandomName}}\",\n    \"description\": \"Repo for Test cases\",\n    \"private\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_Url}}/user/repos",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get_A_Repo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Response time is less than equal to 600ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Body matches string\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"{{RandomName}}\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "    });\r",
+              "\r",
+              "    \r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{Base_Url}}/repos/{{Owner}}/{{RandomName}}",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{RandomName}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update_A_Repo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.name).to.eql(\"{{RandomName}}\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.description).to.eql(\"Chaning name and perissions\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.private).to.eql(true);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.owner.login).to.eql(\"gopimahankali\");\r",
+              "});\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"description\":\"Chaning name and perissions\",\r\n    \"private\":true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_Url}}/repos/{{Owner}}/{{RandomName}}",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{RandomName}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete_A_Repo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Handle 404 gracefully — repo may not exist",
+              "if (pm.response.code === 404) {",
+              "    console.log(\"Repository was not found. It may have already been deleted or never created.\");",
+              "} else {",
+              "    pm.test(\"Status code is 204\", function () {",
+              "        pm.response.to.have.status(204);",
+              "    });",
+              "",
+              "    pm.test(\"Response body is empty\", function () {",
+              "        pm.expect(pm.response.text()).to.be.empty;",
+              "    });",
+              "",
+              "    pm.test(\"Content-Type header is absent or empty\", function () {",
+              "        const contentType = pm.response.headers.get(\"Content-Type\");",
+              "        pm.expect(contentType).to.be.oneOf([null, undefined, \"\"]);",
+              "    });",
+              "}",
+              "",
+              "pm.test(\"Response time is acceptable\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{Base_Url}}/repos/{{Owner}}/{{reponame}}",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{reponame}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

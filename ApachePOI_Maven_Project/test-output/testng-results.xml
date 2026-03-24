@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-16T12:21:41 IST" name="Default suite" finished-at="2026-02-16T12:21:51 IST" duration-ms="9545">
+    <groups>
+    </groups>
+    <test started-at="2026-02-16T12:21:41 IST" name="Default test" finished-at="2026-02-16T12:21:51 IST" duration-ms="9545">
+      <class name="poi_basics.DataProvider_Through_ExcelFile">
+        <test-method signature="Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:poi_basics.DataProvider_Through_ExcelFile@233795b6]" started-at="2026-02-16T12:21:43 IST" name="Login" data-provider="LoginData" finished-at="2026-02-16T12:21:51 IST" duration-ms="7877" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://demowebshop.tricentis.com/login]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[lucky9012@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lucky@12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+      </class> <!-- poi_basics.DataProvider_Through_ExcelFile -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
